@@ -1,0 +1,15 @@
+---
+title: Årsmeldingar
+layout: layouts/home.njk
+---
+
+<h1>Årsmeldingar</h1>
+
+<ul>
+  {% for report in reports %}
+    <li>
+      År {{ report.year }}:
+      <a href="/pdf/{{ report.filename }}">Last ned</a>
+    </li>
+  {% endfor %}
+</ul>
