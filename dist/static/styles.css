@@ -1,0 +1,366 @@
+/* ----------------------------------------
+   Fargevariabler (klubbfargar: blå og svart)
+----------------------------------------- */
+:root {
+  --farge-bakgrunn: #f6f7f9; /* Dus lys gråblå */
+  --farge-tekst: #1a1a1a;
+  --farge-hovud: #3a5ca4;       /* FRBK-blå, men dus */
+  --farge-hovud-mørk: #1f2e56;  /* Dempa mørkeblå */
+  --farge-link: #3a5ca4;
+  --farge-kort: #ffffff;
+  --farge-kort-kant: #e0e0e0;
+  --farge-skygge: rgba(0, 0, 0, 0.04);
+  --farge-footer: #f0f0f0;
+  --font: "Noto Sans", system-ui, sans-serif;
+}
+
+/* Mørk modus (automatisk) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --farge-bakgrunn: #1b1e23;
+    --farge-tekst: #f5f5f5;
+    --farge-link: #7aa2f7;
+    --farge-kort: #2a2d33;
+    --farge-kort-kant: #444;
+    --farge-skygge: rgba(255, 255, 255, 0.03);
+    --farge-footer: #1a1a1a;
+  }
+}
+
+/* ----------------------------------------
+   Grunnoppsett
+----------------------------------------- */
+html {
+  font-family: var(--font);
+  background: var(--farge-bakgrunn);
+  color: var(--farge-tekst);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ----------------------------------------
+   Header og navigasjon
+----------------------------------------- */
+header {
+  background: var(--farge-hovud-mørk);
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.frbk-logo {
+  height: 150px;
+  width: auto;
+}
+.hjornetrekant {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: var(--farge-hovud);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.7rem;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.hjornetrekant a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transform: rotate(47deg) translateY(10%) translateX(20%);
+  transform-origin: top right;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hjornetrekant a:hover {
+  text-decoration: underline;
+}
+
+.hjornetrekant.skjult {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* ----------------------------------------
+   Seksjonar og overskrifter
+----------------------------------------- */
+section {
+  margin-bottom: 2rem;
+}
+section h2 {
+  border-bottom: 2px solid var(--farge-kort-kant);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* ----------------------------------------
+   Nyheiter / kort
+----------------------------------------- */
+article {
+  background: var(--farge-kort);
+  border: 1px solid var(--farge-kort-kant);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px var(--farge-skygge);
+}
+article img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+article h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+article a {
+  color: var(--farge-link);
+  text-decoration: none;
+}
+article a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------
+   Sponsorar
+----------------------------------------- */
+.sponsorar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.sponsorar img {
+  height: 100px;
+  object-fit: contain;
+}
+
+/* ----------------------------------------
+   Footer
+----------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--farge-footer);
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Manuell tema-override */
+:root[data-theme="dark"] {
+  --farge-bakgrunn: #1b1e23;
+  --farge-tekst: #f5f5f5;
+  --farge-link: #7aa2f7;
+  --farge-kort: #2a2d33;
+  --farge-kort-kant: #444;
+  --farge-skygge: rgba(255, 255, 255, 0.03);
+  --farge-footer: #1a1a1a;
+}
+:root[data-theme="light"] {
+  --farge-bakgrunn: #f6f7f9;
+  --farge-tekst: #1a1a1a;
+  --farge-link: #3a5ca4;
+  --farge-kort: #ffffff;
+  --farge-kort-kant: #e0e0e0;
+  --farge-skygge: rgba(0, 0, 0, 0.04);
+  --farge-footer: #f0f0f0;
+
+}
+
+:root {
+  transition: background 0.1s ease, color 0.1s ease;
+}
+body, header, section, article, footer {
+  transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+}
+
+/* Tema-knapp */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle .icon {
+  display: inline-block;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.theme-toggle .icon.spin {
+  transform: rotate(180deg);
+  opacity: 0.8;
+}
+
+/* Kamp-kort */
+
+.kamper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.kamp-kort {
+  flex: 1 1 280px;
+  background: var(--farge-kort);
+  border: 1px solid var(--farge-kort-kant);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px var(--farge-skygge);
+}
+.kamp-kort h3 {
+  margin-top: 0;
+  color: var(--farge-hovud);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.kamp-kort p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.timeline-container {
+  position: relative;
+  margin: 3rem auto;
+  padding-left: 3rem;
+  border-left: 4px solid var(--farge-hovud);
+  max-width: 760px;
+  box-sizing: border-box;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 0.2rem;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -5.5rem;
+  top: 0;
+  font-weight: bold;
+  color: var(--farge-hovud);
+  background: var(--farge-kort);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--farge-kort-kant);
+  box-shadow: 0 1px 2px var(--farge-skygge);
+  text-align: center;
+  min-width: 60px;
+  font-size: 0.95rem;
+}
+
+.timeline-content {
+  background: var(--farge-kort);
+  color: var(--farge-tekst);
+  padding: 1rem;
+  border: 1px solid var(--farge-kort-kant);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px var(--farge-skygge);
+  position: relative;
+}
+
+
+@media (max-width: 840px) {
+  .timeline-date {
+    position: static;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+  }
+
+  .timeline-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.klubbmerker {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.klubbmerker h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.merker-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.merker-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 160px;
+}
+.merker-grid img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+.merker-grid p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--farge-tekst);
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .hjornetrekant {
+    width: 120px;
+    height: 120px;
+    padding: 0.5rem;
+  }
+
+  .hjornetrekant a {
+    font-size: 0.7rem;
+  }
+}
+

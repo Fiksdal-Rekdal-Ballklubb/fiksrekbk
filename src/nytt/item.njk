@@ -1,0 +1,21 @@
+---
+pagination:
+  data: nyheter
+  size: 1
+  alias: post
+permalink: "nytt/{{ post.slug }}/index.html"
+layout: layouts/base.njk
+---
+
+<article>
+  <h1>{{ post.tittel }}</h1>
+  <p><em>{{ post.dato }}</em></p>
+
+  {% if post.bilde %}
+    <img src="{{ post.bilde }}" alt="Bilde til {{ post.title }}" style="max-width: 100%; height: auto; margin-bottom: 1rem;" />
+  {% endif %}
+
+  <p><strong>{{ post.ingress }}</strong></p>
+  <p>{{ post.body }}</p>
+  <a href="/nytt/">← Tilbake til nyheiter</a>
+</article>
