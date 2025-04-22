@@ -1,17 +1,18 @@
 ---
 layout: layouts/base.njk
-title: Nyheiter
+title: Nyheter
 ---
 
-<h1>Nyheiter</h1>
+<h1>Nyheter</h1>
 
 {% for post in nyheter %}
   <article>
     {% if post.bilde %}
       <img src="{{ post.bilde }}" alt="Bilde til {{ post.tittel }}" style="max-width: 100%; height: auto;" />
     {% endif %}
-    <h2><a href="/nytt/{{ post.slug }}/">{{ post.tittel }}</a></h2>
+    <h2>{{ post.tittel }}</h2>
     <p><em>{{ post.dato }}</em></p>
     <p>{{ post.ingress }}</p>
+    <a href="/nytt/{{ post.slug }}/">Les mer</a>
   </article>
 {% endfor %}

@@ -32,7 +32,7 @@ export default async function () {
     const reserved = ["index", "nytt", "kontakt", "om", "dokument", "fairplay", "utmerkelse"];
 
     return rows
-      .filter((post) => post.tittel) // hopp over rader uten tittel
+      .filter((post) => post.tittel)
       .map((post) => {
         let baseSlug = post.slug?.trim().toLowerCase() || makeSlug(post.tittel);
         if (!baseSlug) {
@@ -42,7 +42,6 @@ export default async function () {
           baseSlug += "-nyhet";
         }
 
-        // Lag unik slug
         let slug = baseSlug;
         let i = 1;
         while (slugs.has(slug)) {
@@ -54,12 +53,12 @@ export default async function () {
         return {
           ...post,
           slug,
-          title: post.tittel, // legg til alias for templaten
+          title: post.tittel,
         };
       })
       .sort((a, b) => new Date(b.dato) - new Date(a.dato));
   } catch (err) {
-    console.error("Feil ved henting av nyheiter:", err);
+    console.error("Feil ved henting av nyheter:", err);
     return [];
   }
 }

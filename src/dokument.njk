@@ -3,8 +3,15 @@ layout: layouts/base.njk
 title: Dokument
 ---
 
-<h1>Dokument</h1>
+<h1>📑 Dokumentarkiv</h1>
+
 <ul>
-  <li><a href="/static/arsmelding-2024.pdf">Årsmelding 2024 (PDF)</a></li>
-  <li><a href="/static/sportsplan.pdf">Sportsplan</a></li>
+  {% for doc in dokumenter %}
+    <li>
+      <strong>{{ doc.tittel }} {{ doc.år }}</strong><br>
+      <a href="{{ doc.url }}" target="_blank" rel="noopener">Last ned PDF</a>
+    </li>
+  {% else %}
+    <li>Ingen dokumenter publisert enno.</li>
+  {% endfor %}
 </ul>

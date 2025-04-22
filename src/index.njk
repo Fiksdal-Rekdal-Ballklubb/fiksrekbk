@@ -1,24 +1,24 @@
 ---
 layout: layouts/base.njk
-title: Heim
+title: Hjem
 ---
 
-<h1>Velkomen til Fiksdal/Rekdal Ballklubb</h1>
+<h1>Velkommen til Fiksdal/Rekdal Ballklubb</h1>
 
-<p>Fiksdal/Rekdal Ballklubb (FRBK) er ein inkluderande og frivillig driven fotballklubb i Møre og Romsdal. Vi tilbyr fotballaktivitet for barn og ungdom, og samarbeider aktivt med naboklubbar for å sikre eit godt tilbod og eit trygt miljø – både på og utanfor bana.</p>
+<p>Fiksdal/Rekdal Ballklubb (FRBK) er en inkluderende og frivillig drevet fotballklubb i Møre og Romsdal. Vi tilbyr fotballaktivitet for barn og ungdom, og samarbeider aktivt med naboklubber for å sikre et godt tilbud og et trygt miljø – både på og utenfor banen.</p>
 
 <section>
   <h2>Om klubben</h2>
-  <p>FRBK vart stifta 18. november 1979. Det første styret besto av Helge Bjerkevoll, Sigmund Rekdal, Knut Bergheim, Jan Kristian Liabø og Nils Einar Aarnes – sistnemnde teikna klubbens logo, som framleis er i bruk.</p>
+  <p>FRBK ble stiftet 18. november 1979. Det første styret besto av Helge Bjerkevoll, Sigmund Rekdal, Knut Bergheim, Jan Kristian Liabø og Nils Einar Aarnes – sistnevnte tegnet klubbens logo, som fortsatt er i bruk.</p>
 
-  <p>Klubben vart godkjent som <strong>Kvalitetsklubb</strong> i 2020. Vi legg vekt på samarbeid, tryggleik og fotballglede. Grunna lågt folketal har vi ikkje meldt på seniorlag i 2024, men samarbeider tett med Tomrefjord IL på fleire nivå.</p>
+  <p>Klubben ble godkjent som <strong>Kvalitetsklubb</strong> i 2020. Vi legger vekt på samarbeid, trygghet og fotballglede. På grunn av lavt folketall har vi ikke meldt på seniorlag i 2024, men samarbeider tett med Tomrefjord IL på flere nivåer.</p>
 
   <ul>
-    <li>⚽ Tilbod for barn og ungdom</li>
-    <li>🤝 Samarbeid med naboklubbar (særleg Tomrefjord IL)</li>
+    <li>⚽ Tilbud for barn og ungdom</li>
+    <li>🤝 Samarbeid med naboklubber (særlig Tomrefjord IL)</li>
     <li>🌟 Godkjent som Kvalitetsklubb (NFF) i 2020</li>
-    <li>📍 Heimstadion: Fiksdal stadion</li>
-    <li>🎖️ Barndomsklubben til Kjetil Rekdal – som avslutta karrieren i 2019 mot Langfjorden</li>
+    <li>📍 Hjemmestadion: Fiksdal stadion</li>
+    <li>🎖️ Barndomsklubben til Kjetil Rekdal – som avsluttet karrieren i 2019 mot Langfjorden</li>
   </ul>
 </section>
 
@@ -26,12 +26,12 @@ title: Heim
   <h2>Klubben er godkjent som:</h2>
   <div class="merker-grid">
     <div>
-      <img src="/static/kvalitetsklubb.png" alt="Kvalitetsklubb frå Norges Fotballforbund" />
+      <img src="/static/kvalitetsklubb.png" alt="Kvalitetsklubb fra Norges Fotballforbund" />
       <p>Kvalitetsklubb (NFF)</p>
     </div>
     <div>
       <img src="/static/fairplay.png" alt="Fair Play" />
-      <p>Vi spelar etter Fair Play-prinsipp</p>
+      <p>Vi spiller etter Fair Play-prinsipper</p>
     </div>
   </div>
 </section>
@@ -46,7 +46,7 @@ title: Heim
     {% endif %}
     {% if kampdata.forrige %}
       <div class="kamp-kort">
-        <h3>Førre kamp</h3>
+        <h3>Forrige kamp</h3>
         <p>{{ kampdata.forrige }}</p>
       </div>
     {% endif %}
@@ -55,7 +55,7 @@ title: Heim
 
 {% if innstillinger.visNyheter and nyheter.length > 0 %}
   <section>
-    <h2>Nyheiter</h2>
+    <h2>Nyheter</h2>
     {% for post in nyheter %}
       <article>
         {% if post.bilde %}
@@ -64,13 +64,14 @@ title: Heim
         <h2><a href="/nytt/{{ post.slug }}/">{{ post.title }}</a></h2>
         <p><em>{{ post.dato }}</em></p>
         <p>{{ post.ingress }}</p>
+        <a href="/nytt/{{ post.slug }}/">Les mer</a>
       </article>
     {% endfor %}
   </section>
 {% endif %}
 
 <section>
-  <h2>Våre sponsorar</h2>
+  <h2>Våre sponsorer</h2>
   <div class="sponsorar">
     <img src="/static/sponsor1.png" alt="Sponsor 1" />
     <img src="/static/sponsor2.png" alt="Sponsor 2" />

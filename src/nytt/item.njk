@@ -16,6 +16,8 @@ layout: layouts/base.njk
   {% endif %}
 
   <p><strong>{{ post.ingress }}</strong></p>
-  <p>{{ post.body }}</p>
-  <a href="/nytt/">← Tilbake til nyheiter</a>
+    <div class="nytt-body">
+    {{ post.body | markdown | safe }}
+    </div>
+  <a href="/nytt/">← Tilbake til nyheter</a>
 </article>
