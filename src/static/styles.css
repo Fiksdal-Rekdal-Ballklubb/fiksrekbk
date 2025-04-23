@@ -407,15 +407,28 @@ body, header, section, article, footer {
   box-sizing: border-box;
 }
 
-/* Åpen: Burger → Kryss */
+/* Åpen: Burger */
+.mobilmeny-knapp.open span {
+  background: var(--farge-tekst);
+}
 .mobilmeny-knapp.open span:nth-child(1) {
-  transform: rotate(45deg) translate(12px, 11px);
+  transform: rotate(45deg) translate(7px, 7px);
 }
 .mobilmeny-knapp.open span:nth-child(2) {
   opacity: 0;
 }
 .mobilmeny-knapp.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, -2px);
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.mobilmeny-knapp.open {
+  animation: bounceInn 0.3s ease;
+}
+
+@keyframes bounceInn {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 
