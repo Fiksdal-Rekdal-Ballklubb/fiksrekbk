@@ -385,13 +385,15 @@ body, header, section, article, footer {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 40px;
-  height: 32px;
+  width: 48px;
+  height: 40px;
   background: none;
   border: none;
   cursor: pointer;
   display: none;
   z-index: 9999;
+  box-sizing: content-box;
+  padding: 0;
 }
 
 .mobilmeny-knapp span {
@@ -401,19 +403,21 @@ body, header, section, article, footer {
   background: white;
   margin: 6px 0;
   border-radius: 2px;
-  transition: transform 0.4s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* Åpen: Burger → Kryss */
 .mobilmeny-knapp.open span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
+  transform: rotate(45deg) translate(2px, 2px);
 }
 .mobilmeny-knapp.open span:nth-child(2) {
   opacity: 0;
 }
 .mobilmeny-knapp.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
+  transform: rotate(-45deg) translate(2px, -2px);
 }
+
 
 .mobilmeny-overlay {
   position: fixed;
