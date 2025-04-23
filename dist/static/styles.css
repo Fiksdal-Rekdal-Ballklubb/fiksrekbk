@@ -385,7 +385,7 @@ body, header, section, article, footer {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 48px;
+  width: 40px;
   height: 40px;
   background: none;
   border: none;
@@ -409,7 +409,7 @@ body, header, section, article, footer {
 
 /* Åpen: Burger → Kryss */
 .mobilmeny-knapp.open span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, 2px);
+  transform: rotate(45deg) translate(12px, 11px);
 }
 .mobilmeny-knapp.open span:nth-child(2) {
   opacity: 0;
