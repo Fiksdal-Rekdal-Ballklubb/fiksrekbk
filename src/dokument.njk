@@ -5,13 +5,15 @@ title: Dokument
 
 <h1>📑 Dokumentarkiv</h1>
 
-<ul>
+<div class="dokument-arkiv">
   {% for doc in dokumenter %}
-    <li>
-      <strong>{{ doc.tittel }} {{ doc.år }}</strong><br>
-      <a href="{{ doc.url }}" target="_blank" rel="noopener">Last ned PDF</a>
-    </li>
+    <article class="dokument-kort">
+      <h2>{{ doc.tittel }} <span class="år">{{ doc.år }}</span></h2>
+    <a href="{{ doc.url }}" class="knapp" target="_blank" rel="noopener">
+      📄 Last ned PDF
+    </a>
+    </article>
   {% else %}
-    <li>Ingen dokumenter publisert enno.</li>
+    <p>Ingen dokumenter publisert ennå.</p>
   {% endfor %}
-</ul>
+</div>

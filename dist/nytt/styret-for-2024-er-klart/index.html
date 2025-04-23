@@ -7,15 +7,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-  <script>
-    try {
-      const saved = localStorage.getItem("theme");
-      const theme = saved || "light";
-      document.documentElement.setAttribute("data-theme", theme);
-    } catch (e) {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-  </script>
+<script>
+  try {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = saved || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+</script>
 </head>
 <body>
   <header>
@@ -49,7 +50,7 @@
     
 <article>
   <h1>Styret for 2024 er klart</h1>
-  <p><em>2024-02-01</em></p>
+  <p><em>01.02.2024</em></p>
 
   
 

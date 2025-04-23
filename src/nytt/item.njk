@@ -9,7 +9,7 @@ layout: layouts/base.njk
 
 <article>
   <h1>{{ post.tittel }}</h1>
-  <p><em>{{ post.dato }}</em></p>
+  <p><em>{{ post.dato | datoNorsk }}</em></p>
 
   {% if post.bilde %}
     <img src="{{ post.bilde }}" alt="Bilde til {{ post.title }}" style="max-width: 100%; height: auto; margin-bottom: 1rem;" />

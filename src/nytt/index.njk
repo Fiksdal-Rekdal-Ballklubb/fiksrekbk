@@ -11,7 +11,7 @@ title: Nyheter
       <img src="{{ post.bilde }}" alt="Bilde til {{ post.tittel }}" style="max-width: 100%; height: auto;" />
     {% endif %}
     <h2>{{ post.tittel }}</h2>
-    <p><em>{{ post.dato }}</em></p>
+    <p><em>{{ post.dato | datoNorsk }}</em></p>
     <p>{{ post.ingress }}</p>
     <a href="/nytt/{{ post.slug }}/">Les mer</a>
   </article>

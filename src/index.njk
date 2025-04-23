@@ -62,7 +62,7 @@ title: Hjem
           <img src="{{ post.bilde }}" alt="Bilde til {{ post.title }}" />
         {% endif %}
         <h2><a href="/nytt/{{ post.slug }}/">{{ post.title }}</a></h2>
-        <p><em>{{ post.dato }}</em></p>
+        <p><em>{{ post.dato | datoNorsk }}</em></p>
         <p>{{ post.ingress }}</p>
         <a href="/nytt/{{ post.slug }}/">Les mer</a>
       </article>

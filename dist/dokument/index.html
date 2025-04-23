@@ -7,15 +7,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-  <script>
-    try {
-      const saved = localStorage.getItem("theme");
-      const theme = saved || "light";
-      document.documentElement.setAttribute("data-theme", theme);
-    } catch (e) {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-  </script>
+<script>
+  try {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = saved || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+</script>
 </head>
 <body>
   <header>
@@ -49,14 +50,30 @@
     
 <h1>📑 Dokumentarkiv</h1>
 
-<ul>
+<div class="dokument-arkiv">
   
-    <li>
-      <strong>Årsmelding 2024</strong><br>
-      <a href="https://drive.google.com/file/d/1ZuI5rz4D_KiN7jFqV0gbs8j6sLpFbN7E/view?usp=sharing" target="_blank" rel="noopener">Last ned PDF</a>
-    </li>
+    <article class="dokument-kort">
+      <h2>Årsmelding <span class="år">2024</span></h2>
+    <a href="https://drive.google.com/file/d/1ZuI5rz4D_KiN7jFqV0gbs8j6sLpFbN7E/view?usp=sharing" class="knapp" target="_blank" rel="noopener">
+      📄 Last ned PDF
+    </a>
+    </article>
   
-</ul>
+    <article class="dokument-kort">
+      <h2>Klubbhåndbok <span class="år">2022</span></h2>
+    <a href="https://drive.google.com/file/d/1E0RHjXopSJq-ure09oF_V9Un4Ni7kycc/view?usp=sharing" class="knapp" target="_blank" rel="noopener">
+      📄 Last ned PDF
+    </a>
+    </article>
+  
+    <article class="dokument-kort">
+      <h2>Sportsplan <span class="år">2022</span></h2>
+    <a href="https://drive.google.com/file/d/1zkk0l5UNelqN9A_COSAAo8CMRZdUCRVj/view?usp=sharing" class="knapp" target="_blank" rel="noopener">
+      📄 Last ned PDF
+    </a>
+    </article>
+  
+</div>
 
   </main>
 

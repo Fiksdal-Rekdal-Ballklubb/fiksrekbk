@@ -3,6 +3,7 @@
 ----------------------------------------- */
 :root {
   --farge-bakgrunn: #f6f7f9;
+  --farge-hvit: #f0e7e7;
   --farge-tekst: #1a1a1a;
   --farge-hovud: #3a5ca4;
   --farge-hovud-mørk: #1f2e56;
@@ -36,12 +37,27 @@ main {
   padding: 2rem 1rem;
 }
 
+main a {
+  color: var(--farge-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+main a:hover,
+main a:focus {
+  color: var(--farge-hovud);
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--farge-hovud);
+}
+
+
 /* ----------------------------------------
    Header og nav
 ----------------------------------------- */
 header {
   background: var(--farge-hovud-mørk);
-  color: #fff;
+  color: var(--farge-hvit);
   padding: 1.5rem 1rem;
   text-align: center;
 }
@@ -49,18 +65,24 @@ header h1 {
   margin: 0;
   font-size: 2rem;
 }
+
 nav {
   margin-top: 0.5rem;
 }
+
 nav a {
-  color: #fff;
+  color: var(--farge-hvit);
   margin: 0 0.5rem;
   text-decoration: none;
   font-weight: bold;
 }
-nav a:hover {
+
+nav a:hover,
+nav a:focus {
   text-decoration: underline;
+  color: var(--farge-hvit);
 }
+
 .frbk-logo {
   height: 150px;
   width: auto;
@@ -84,7 +106,7 @@ nav a:hover {
 }
 
 .hjornetrekant a {
-  color: white;
+  color: var(--farge-hvit);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: bold;
@@ -146,6 +168,71 @@ article a:hover {
 }
 
 /* ----------------------------------------
+   Dokument
+----------------------------------------- */
+
+.dokument-arkiv {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.dokument-kort {
+  background: var(--farge-kort);
+  border: 1px solid var(--farge-kort-kant);
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px var(--farge-skygge);
+  transition: transform 0.2s ease;
+}
+
+.dokument-kort:hover {
+  transform: scale(1.01);
+}
+
+.dokument-kort h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dokument-kort .år {
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: var(--farge-link);
+}
+
+.dokument-kort .knapp {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0;
+}
+
+
+a.knapp {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: var(--farge-link);
+  color: var(--farge-hvit);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a.knapp:hover,
+a.knapp:focus {
+  background: var(--farge-hovud);
+  text-decoration: underline;
+  color: var(--farge-hvit);
+}
+
+
+/* ----------------------------------------
    Sponsor
 ----------------------------------------- */
 .sponsorar {
@@ -175,7 +262,7 @@ footer {
 :root[data-theme="dark"] {
   --farge-bakgrunn: #1b1e23;
   --farge-tekst: #f5f5f5;
-  --farge-link: #7aa2f7;
+  --farge-link: #618ff0;
   --farge-kort: #2a2d33;
   --farge-kort-kant: #444;
   --farge-skygge: rgba(255, 255, 255, 0.03);
@@ -184,7 +271,7 @@ footer {
 :root[data-theme="light"] {
   --farge-bakgrunn: #f6f7f9;
   --farge-tekst: #1a1a1a;
-  --farge-link: #3a5ca4;
+  --farge-link: #20428b;
   --farge-kort: #ffffff;
   --farge-kort-kant: #e0e0e0;
   --farge-skygge: rgba(0, 0, 0, 0.04);
